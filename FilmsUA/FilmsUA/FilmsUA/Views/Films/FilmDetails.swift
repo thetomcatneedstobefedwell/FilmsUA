@@ -29,11 +29,11 @@ struct FilmDetails: View {
                             AsyncImage(url: URL(string: imageUrl)) { image in
                                 image
                                     .resizable()
-                                    .scaledToFit()
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
                             } placeholder: {
                                 ProgressView()
                             }
+                            .frame(height: 600)
                             ShadowEffect()
                         }
                         
@@ -45,6 +45,7 @@ struct FilmDetails: View {
                                     .foregroundColor(.white)
                                     .font(.largeTitle)
                                     .fontWeight(.heavy)
+                                    .scaledToFit()
                                     .minimumScaleFactor(0.01)
                                     .lineLimit(1)
                             }

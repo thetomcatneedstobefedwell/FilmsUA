@@ -12,10 +12,16 @@ struct BackButton: View {
     var body: some View { Button(action: {
         self.presentationMode.wrappedValue.dismiss()
     }) {
-        Image(systemName: "xmark.circle.fill")
-            .symbolRenderingMode(.palette)
-            .foregroundStyle(.white, .blue)
-            .font(.system(size: 30, design: .rounded))
+        HStack {
+            ZStack {
+                Circle()
+                    .foregroundColor(.blue)
+                    .frame(width: 40, height: 40)
+                Image(systemName: "xmark")
+                    .foregroundColor(.white)
+                    .font(.title2)
+            }
+        }
     }
     }
 }
