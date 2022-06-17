@@ -144,8 +144,8 @@ struct FilmDetails: View {
     }
 }
 
-//struct FilmDetails_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FilmDetails(id: 550)
-//    }
-//}
+struct FilmDetails_Previews: PreviewProvider {
+    static var previews: some View {
+        FilmDetails(id: 550)
+    }
+}

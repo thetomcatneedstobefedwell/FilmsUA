@@ -6,20 +6,34 @@
 //
 
 import Foundation
+import Combine
 
-func getFilms(load: Bool = false, completion: @escaping ([FilmCard]) -> ()) {
+//func getFilms(load: Bool = false, completion: @escaping ([FilmCard]) -> ()) -> Void {
+func getFilms(load: Bool = false, completion: @escaping ([FilmCard]) -> ()) -> Void {
     FilmList.page += load ? 1 : 0
     guard let url: URL = URL(string: "https://api.themoviedb.org/3/movie/popular?api_key=e92e44d11658d052b0bbaf2e23940f65&page=\(FilmList.page)")
     else { return }
     
-    URLSession.shared.dataTask(with: url) { (data, _, _) in
-        let response = try! JSONDecoder().decode(FilmList.self, from: data!)
-        let films = response.results
-        DispatchQueue.main.async {
-            completion(films)
-        }
-    }
-    .resume()
+//    URLSession.shared.dataTask(with: url) { (data, _, _) in
+//        let response = try! JSONDecoder().decode(FilmList.self, from: data!)
+//        print(type(of: FilmList.self))
+//        let films = response.results
+//        DispatchQueue.main.async {
+//            completion(films)
+//        }
+//    }
+//    .resume()
+//    getData(url: url, type: FilmList.self)
+//        .map(\.results)
+//        .eraseToAnyPublisher()
+}
+
+func getData<T: Decodable>(url: URL, type: T.Type) -> AnyPublisher<T, Error> {
+    return URLSession.shared.dataTaskPublisher(for: url)
+        .receive(on: DispatchQueue.main)
+        .map(\.data)
+        .decode(type: T.self, decoder: JSONDecoder())
+        .eraseToAnyPublisher()
 }
 
 func getFilmDetails(id: UInt, completion: @escaping (FilmDetail) -> ()) {

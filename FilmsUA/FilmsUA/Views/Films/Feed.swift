@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Feed: View {
+    @StateObject private var viewModel: FeedViewModel = FeedViewModel()
     @State private var films: [FilmCard] = []
     @State private var queryString: String = ""
     @State private var isSearched: Bool = false
@@ -59,29 +60,30 @@ struct Feed: View {
                             } label: {
                                 FilmRow(film: film)
                             }
-                            .onAppear() {
-                                if film == films.last {
-                                    if isSearched {
-                                        searchFilms(query: queryString, load: true) { (films) in
-                                            self.films += films
-                                        }
-                                    } else {
-                                        getFilms(load: true) { (films) in
-                                            self.films += films
-                                        }
-                                    }
-                                }
-                            }
+//                            .onAppear() {
+//                                if film == films.last {
+//                                    if isSearched {
+//                                        searchFilms(query: queryString, load: true) { (films) in
+//                                            self.films += films
+//                                        }
+//                                    } else {
+//                                        getFilms(load: true) { (films) in
+//                                            self.films += films
+//                                        }
+//                                    }
+//                                }
+//                            }
                         }
                     }
                     .background(Color.black)
                 }
                 .onAppear() {
-                    if self.films.count == 0 {
-                        getFilms { (films) in
-                            self.films = films
-                        }
-                    }
+//                    if self.films.count == 0 {
+//                        getFilms { (films) in
+//                            self.films = films
+//                        }
+                    viewModel.getPopularFilms()
+//                    }
                 }
             }
             .background(Color(red: 0.124, green: 0.123, blue: 0.129))

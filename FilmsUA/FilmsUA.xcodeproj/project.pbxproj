@@ -27,6 +27,7 @@
 		93D0704A28115FB000E36A97 /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D0704928115FB000E36A97 /* Genre.swift */; };
 		93D0704E28116D4300E36A97 /* FilmDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D0704D28116D4300E36A97 /* FilmDetails.swift */; };
 		93D070532811712500E36A97 /* StarsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93D070522811712500E36A97 /* StarsView.swift */; };
+		93EDABB2285B755B005E5A25 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93EDABB1285B755B005E5A25 /* FeedViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		93D0704928115FB000E36A97 /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
 		93D0704D28116D4300E36A97 /* FilmDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDetails.swift; sourceTree = "<group>"; };
 		93D070522811712500E36A97 /* StarsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarsView.swift; sourceTree = "<group>"; };
+		93EDABB1285B755B005E5A25 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				9376F4EC28071043003036D1 /* ModelData.swift */,
 				9376F4EE28082620003036D1 /* FilmList.swift */,
 				93D0704928115FB000E36A97 /* Genre.swift */,
+				93EDABB1285B755B005E5A25 /* FeedViewModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93EDABB2285B755B005E5A25 /* FeedViewModel.swift in Sources */,
 				93CE6314281C28EF0076516B /* ShadowEffect.swift in Sources */,
 				93D070532811712500E36A97 /* StarsView.swift in Sources */,
 				9376F4DB28070B65003036D1 /* ContentView.swift in Sources */,
