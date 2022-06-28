@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  FilmsUA
-//
-//  Created by Roman Zherebko on 13.04.2022.
-//
-
 import SwiftUI
 
 struct ContentView: View {
